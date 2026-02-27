@@ -40,7 +40,8 @@ export const WithEmailAlreadyExists: Story = {
         messagesPerField: {
           // NOTE: The other functions of messagesPerField are derived from get() and
           // existsError() so they are the only ones that need to mock.
-          existsError: (fieldName: string, ...otherFieldNames: string[]) => [fieldName, ...otherFieldNames].includes("email"),
+          existsError: (fieldName: string, ...otherFieldNames: string[]) =>
+            [fieldName, ...otherFieldNames].includes("email"),
           get: (fieldName: string) => (fieldName === "email" ? "Email already exists." : undefined)
         }
       }}
@@ -222,7 +223,8 @@ export const WithTermsNotAccepted: Story = {
         termsAcceptanceRequired: true,
         messagesPerField: {
           existsError: (fieldName: string) => fieldName === "termsAccepted",
-          get: (fieldName: string) => (fieldName === "termsAccepted" ? "You must accept the terms." : undefined)
+          get: (fieldName: string) =>
+            fieldName === "termsAccepted" ? "You must accept the terms." : undefined
         }
       }}
     />
