@@ -7,7 +7,7 @@ on:
 
 env:
   dockerimage_tag: ${{ github.sha }}
-  dockerimage_name: tsungmn/tsumnsso
+  dockerimage_name: tsungmnli/tsumnsso
 
 jobs:
   build:
